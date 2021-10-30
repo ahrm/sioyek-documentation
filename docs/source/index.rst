@@ -1,5 +1,5 @@
-Welcome to Lumache's documentation!
-===================================
+Sioyek Documentation
+====================
 
 **Sioyek** is a PDF viewer designed for reading reserach papers and technical books.
 
