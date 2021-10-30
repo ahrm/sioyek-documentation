@@ -10,4 +10,3 @@ Contents
 
    installation
    usage
-   api
