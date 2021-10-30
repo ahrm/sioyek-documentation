@@ -14,8 +14,6 @@ For example suppose you want to use the :code:`j` key to move down. You can add 
 
    move_down j
 
-Navigation
-----------
 
 Opening Files
 ^^^^^^^^^^^^^
@@ -147,6 +145,8 @@ Sometimes, a paragraph is entirely about a previous part of the document. For ex
 - In order to edit the destination of the current link, press :code:`Shift p` (:code:`edit_link` command). This automatically jumps you to the destination of the link. Now you can adjust the screen or zoom level. When you are done, return to the source location by going back in history (:code:`backspace` by default).
 - You can also edit the link destination by directly panning the helper window using mouse or scrolling using the mouse wheel. You can also adjust the zoom level using the mouse wheel while holding :code:`Ctrl`.
 
+.. _Commands:
+
 Command Menu
 ^^^^^^^^^^^^
 You can open the command menu by pressing :code:`:` (:code:`command` command). This is a searchable list of all the commands available in sioyek (including all the commands described above) along with their current keybindings. Note that some commands do not have any keybindings. The only way to execute these commands is using the commands menu.
@@ -182,6 +182,14 @@ Synctex
    let g:vimtex_view_general_options = '--inverse-search "nvr --remote-expr \"vimtex#view#reverse_goto(%2, ''%1'')\"" --reuse-instance --forward-search-file @tex --forward-search-line @line @pdf'
    let g:vimtex_view_general_options_latexmk = '--reuse-instance' 
 
+
+Data and Synchronization
+^^^^^^^^^^^^^^^^^^^^^^^^
+Sioyek stores your data in two database files named :code:`local.db` and :code:`shared.db`. As the name suggests, :code:`local.db` stores system-specific data (for example the location of PDF files in your filesystem) while :code:`shared.db` stores all other data including marks, bookmarks, portals, etc.
+As the name suggests, :code:`shared.db` can be shared across machines. There is also a :code:`shared_database_path` config which you can set in your :code:`prefs_user.config` which specifies the path of this shared database file. For example you can set this path to be a file in your dropbox directory and this way all your data will automatically be synchronized across your machines.
+
+
+You can also export/import your data into/from a :code:`json` file by executing the :code:`export`/:code:`import` command (see `Commands`_).
 
 Miscellaneous
 ^^^^^^^^^^^^^

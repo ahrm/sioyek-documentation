@@ -10,3 +10,4 @@ Contents
 
    installation
    usage
+   configuration
