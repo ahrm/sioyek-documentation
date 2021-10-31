@@ -92,10 +92,26 @@ The color used to highlight links in PDF files.
 Highlight color for synctex forward search highlights.
 
 
-:code:`google_scholar_address` and :code:`libgen_address`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:code:`search_url_a` to :code:`search_url_z`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The web addresses used for performing search in google scholar and library genesis.
+The web addresses used for performing :code:`external_search` command. (see :ref:`usage:External Search`). Example:
+
+.. code-block:: console
+
+   search_url_g	https://www.google.com/search?q=
+
+:code:`middle_click_search_engine` and :code:`shift_middle_click_search_engine`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The letter corresponding to :code:`search_url_*` configs to use when middle clicking/shift-middle clicking on text.
+Example:
+
+.. code-block:: console
+
+   middle_click_search_engine 		g
+
+This causes the search engine configures using :code:`search_url_g` to be used when middle clicking on text.
 
 :code:`zoom_inc_factor`
 ^^^^^^^^^^^^^^^^^^^^^^^

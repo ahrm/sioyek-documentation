@@ -154,8 +154,14 @@ You can open the command menu by pressing :code:`:` (:code:`command` command). T
 External Search
 ^^^^^^^^^^^^^^^
 
-- Select a piece of text and enter :code:`ss`/:code:`sl` to search it in google scholar/library genesis.
-- You can also middle click on the name of papers/books to quickly search them in google scholar.
+- Select a piece of text and enter :code:`ss`/:code:`sl` (:code:`external_search` command followed by a letter :code:`a`-:code:`z`) to search it in google scholar/library genesis.
+- You can also middle click or shift-middle click on the name of papers/books to quickly search them in google scholar or other search engines. You don't need to select the text, sioyek will automatically try to guess the paper name on which you middle clicked.
+- You can configure the search engines using :code:`search_url_*` configurations in :code:`prefs_user.config`. The :code:`*` stands for any letter :code:`a-z`. For example if I have :code:`search_url_g   https://www.google.com/search?q=` in my :code:`prefs_user.config`, then sioyek will use google to search selected texts when I press :code:`sg`.
+- You can configure which search engines to use for middle click or shift-middle click searches using :code:`middle_click_search_engine` and :code:`shift_middle_click_search_engine` configurations in :code:`prefs_user.config`. The value of these configurations should be a letter corresponding to :code:`search_url_*` configs. For example if I want to use the google search from previous example when middle clicking, I should add the following to my :code:`prefs_user.config`:
+
+.. code-block:: console
+
+   middle_click_search_engine g
 
 Synctex
 ^^^^^^^
