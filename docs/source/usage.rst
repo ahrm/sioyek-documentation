@@ -184,9 +184,12 @@ Synctex
 
 - Here is a sample configuration for VimTex::
 
-   let g:vimtex_view_general_viewer = '/path/to/sioyek.exe'
-   let g:vimtex_view_general_options = '--inverse-search "nvr --remote-expr \"vimtex#view#reverse_goto(%2, ''%1'')\"" --reuse-instance --forward-search-file @tex --forward-search-line @line @pdf'
-   let g:vimtex_view_general_options_latexmk = '--reuse-instance' 
+   let g:vimtex_view_general_viewer = 'sioyek'
+   let g:vimtex_view_general_options = '--reuse-instance'
+         \ . ' --inverse-search'
+         \ .   '"nvim --headless -c \"VimtexInverseSearch %2 ''%1''\""'
+         \ . ' --forward-search-file @tex --forward-search-line @line @pdf'
+   let g:vimtex_view_general_options_latexmk = '--reuse-instance'
 
 
 Data and Synchronization
