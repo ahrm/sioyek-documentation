@@ -199,3 +199,27 @@ If set, we sort the bookmarks by their location instead of their creation time.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The path of :code:`shared.db` database file. You can set this path to be in a synchronized folder (for example a dropbox folder) and sioyek data will be automatically synchronized across your devices.
+
+:code:`font_size`
+^^^^^^^^^^^^^^^^^
+
+Size of the UI font.
+
+:code:`custom_background_color` and :code:`custom_text_color`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Specify the background and text color when using custom color mode (by executing :code:`toggle_custom_color` command).
+
+.. code-block:: console
+
+   custom_background_color		0.18 0.20 0.25
+   custom_text_color			1.0 1.0 1.0
+
+:code:`startup_commands`
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Semicolon-separated list of commands to execute on startup. For example, to start in custom color mode and in visual scroll mode, you can add the following (the command names are the same as the ones displayed when opening the command window using :code:`:`):
+
+.. code-block:: console
+
+   startup_commands		toggle_custom_color;toggle_visual_scroll
