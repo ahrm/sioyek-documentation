@@ -37,7 +37,7 @@ Prefrences in :code:`prefs.config` file
 
 :code:`background_color`
 ^^^^^^^^^^^^^^^^^^^^^^^^
-Specifies the background color of the app (this is different from the background color of PDF page, this color is only shown when the displayed page is smaller than the srceen). The syntax to set colors is:
+Specifies the background color of the app (this is different from the background color of PDF page which is configured using :ref:`customcolor`, this color is only shown when the displayed page is smaller than the srceen). The syntax to set colors is:
 
 .. code-block:: console
 
@@ -185,6 +185,16 @@ If set, we display a checkerboard pattern for unrendered pages (by default we di
 
 Displays an overview of destination when hovering over a link with mouse.
 
+:code:`rerender_overview`
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Normally we reuse the rendered page for overview window. This may cause the overview page to be blurry or too sharp if there is a significant difference between the zoom levels of the main window and overview window.
+If :code:`rerender_overview` is set, we rerender overview which solves this issue at the cost of some additional computation.
+
+.. code-block:: console
+
+   rerender_overview		1
+
 :code:`default_dark_mode`
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -205,6 +215,36 @@ The path of :code:`shared.db` database file. You can set this path to be in a sy
 
 Size of the UI font.
 
+:code:`ui_font`
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+The font to use for UI text.
+
+.. code-block:: console
+
+   ui_font		Segoe UI Emoji
+
+
+:code:`item_list_prefix`
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+A prefix character to use before list of items (for example can be used to display a checkmark before each of the bookmarks).
+
+.. code-block:: console
+
+   item_list_prefix	✔️
+
+:code:`check_for_updates_on_startup`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If set, sioyek checkes for new versions on startup and notifies the user if a new version if available.
+
+.. code-block:: console
+
+   check_for_updates_on_startup	1
+
+.. _customcolor:
+
 :code:`custom_background_color` and :code:`custom_text_color`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -223,3 +263,26 @@ Semicolon-separated list of commands to execute on startup. For example, to star
 .. code-block:: console
 
    startup_commands		toggle_custom_color;toggle_visual_scroll
+
+:code:`status_bar_color`, :code:`status_bar_text_color` and :code:`status_bar_font_size`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Allow you to customize the appearance of status bar.
+
+.. code-block:: console
+
+   status_bar_color        0 0 0
+   status_bar_text_color   1 1 1
+   status_bar_font_size    10
+
+:code:`execute_command_a` to :code:`execute_command_z`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Predefined shell commands to be executed using :code:`execute_predefined_command`. :code:`%1` expands to the path of the current file and :code:`%2` expands to name of the current file.
+For example, suppose you have a command named :code:`ocr` which takes a file path and produces an OCR'd version of the document. You can add the following to you :code:`prefs_user.config`:
+
+.. code-block:: console
+
+   execute_command_o	ocr "%1"
+
+You can later quickly invoke this command by executing :code:`execute_predefined_command` and then pressing :code:`o`.

@@ -14,6 +14,8 @@ For example suppose you want to use the :code:`j` key to move down. You can add 
 
    move_down j
 
+You can press :code:`:` to open a searchable list of all available commands.
+
 
 Opening Files
 ^^^^^^^^^^^^^
@@ -21,6 +23,7 @@ Opening Files
 - Press :code:`o` to open the select file menu. (:code:`open_document` command)
 - Press :code:`<Shift o>` (:code:`O`) to open a searchable list of recently opened files. (:code:`open_prev_doc` command)
 - Press :code:`<Ctrl o>` to open an embedded file system browser. (:code:`open_document_embedded` command)
+- Press :code:`<Ctrl Shift o>` to open an embedded file system browser rooted in the current document folder. (:code:`open_document_embedded_from_current_path` command)
 
 
 Basic Movement
@@ -81,7 +84,7 @@ If you right click on a line of text in a PDF file, sioyek displays a visual hig
 2. It highlights the current line being read which reduces eye strain and prevents losing your place in PDF files.
 
 - You can move the visual mark to the next/previous line by pressing :code:`j`/:code:`k` (:code:`move_visual_mark_down` and :code:`move_visual_mark_up` commands).
-- You can toggle visual scroll mode by pressing :code:`f7`. In this mode, mouse wheel moves the visual mark up and down.
+- You can toggle visual scroll mode by pressing :code:`f7` (:code:`toggle_visual_scroll` command). In this mode, mouse wheel moves the visual mark up and down.
 
 Search
 ^^^^^^
@@ -115,7 +118,7 @@ Bookmarks are similar to marks except they use a textual description instead of 
 - You can add a bookmark by pressing :code:`b` (:code:`add_bookmark` command) and then entering a textual desciption of the bookmark in the opened menu.
 - You can open a searchable list of the bookmarks in the current document by entering :code:`gb` (:code:`goto_bookmark` command).
 - You can open a searchable list of all the bookmarks in all documents by entering :code:`gB` (:code:`goto_bookmark_g` command).
-- You can delete the closest bookmark to the current location by entering :code:`db`. You can also delete bookmarks directly in the bookmarks list by selecting the bookmark and then pressing the :code:`delete` button on keyboard.
+- You can delete the closest bookmark to the current location by entering :code:`db` (:code:`delete_bookmark` command). You can also delete bookmarks directly in the bookmarks list by selecting the bookmark and then pressing the :code:`delete` button on keyboard.
 
 Highlights
 ^^^^^^^^^^
@@ -165,7 +168,7 @@ External Search
 
 Synctex
 ^^^^^^^
-- Press :code:`f4` to toggle synctex mode. While in this mode, right clicking on any text opens the corresponding :code:`tex` file in the appropriate location.
+- Press :code:`f4` to toggle synctex mode (:code:`toggle_synctex` command). While in this mode, right clicking on any text opens the corresponding :code:`tex` file in the appropriate location.
 - You can configure the synctex inverse search command using :code:`inverse_search_command` config in :code:`prefs.config` . Here is an example for VsCode (%1 stands for the name of the file and %2 stands for the line number in the file)::
 
       inverse_search_command "C:\path\to\vscode\Code.exe" -r -g %1:%2
@@ -202,4 +205,8 @@ Miscellaneous
 - You can open the links in PDF files from keyboard by pressing :code:`f` and entering the number next to the desired link. (:code:`open_link` command)
 - Toggle fullscreen mode using :code:`f12` (:code:`toggle_fullscreen` command)
 - Press :code:`f8` to toggle dark mode. (:code:`toggle_dark_mode` command)
-- Press :code:`f5` to toggle presentation mode.
+- Press :code:`f5` to toggle presentation mode (:code:`toggle_presentation_mode` command).
+- You can use :code:`toggle_horizontal_scroll_lock` command to prevent the document from being scrolled horizontally (can be useful for touchpad users).
+- Use :code:`toggle_custom_color` to toggle the custom color scheme configured in :ref:`configuration:Configuration`.
+- Use :code:`execute` to open a command line where you can execute shell commands. In this command line :code:`%1` expands to the full path of the current file and :code:`%2` expands to current file name. You can also predefine commands and execute them quickly using :code:`execute_predefined_command`.
+- You can export a version of current PDF file with all bookmarks/highlights embedded in it (so it is available to other PDF software) by executing :code:`embed_annotations` command.
