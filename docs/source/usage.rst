@@ -127,7 +127,7 @@ Highlights
 
 You can highlight text in sioyek. Similar to marks, you can assign a "type" to each highlight using a lower case alphabet letter. Highlights of different types are distinguished by different colors.
 
-- Select a piece of text and then press :code:`h` followed by a letter to create a highlight of that letter type. For example in order to create a highlight of tye "a" enter :code:`ha`. (:code:`add_highlight` command)
+- Select a piece of text and then press :code:`h` followed by a letter to create a highlight of that letter type. For example in order to create a highlight of type "a" enter :code:`ha`. (:code:`add_highlight` command)
 - Press :code:`gh` to open a searchable list of the highlights in the current document. (:code:`goto_highlight` command)
 - Press :code:`gH` to open a searchable list of the highlights ina all documents. (:code:`goto_highlight_g` command)
 - In order to delete a highlight, first left click on the highlight and then enter :code:`dh` (:code:`delete_highlight` command). Alternatively, you can press the :code:`delete` button on the keyboard in the highlight list.
