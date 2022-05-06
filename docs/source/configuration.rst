@@ -65,15 +65,48 @@ White text in dark mode can be annoying for the eyes. This option allows us to d
 
 Highlight color when text is selected using mouse.
 
-:code:`vertical_line_color`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:code:`visual_mark_color`
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This is the color of the transparent visual mark explained in :ref:`usage:Underline` (this feature originally had an entirely different functionality which is why it is called vertical line even though there is nothing vertical about it!).
+This is the color of the transparent visual mark explained in :ref:`usage:Visual Mark` (this feature originally had an entirely different functionality which is why it is called vertical line even though there is nothing vertical about it!).
 Allowed values are RGBA colors between 0.0 and 1.0. For example, to set the color to a transparent red we add the following to our :code:`prefs_user.config`:
 
 .. code-block:: console
 
-   vertical_line_color  1.0  0.0  0.0  0.1
+   visual_mark_color  1.0  0.0  0.0  0.1
+
+:code:`ruler_mode`
+^^^^^^^^^^^^^^^^^^
+
+If it is 1, we highlight a rectangle around the current line in visual mark mode. Otherwise, we highlight below the current line.
+
+.. code-block:: console
+
+   ruler_mode  1
+
+:code:`ruler_padding` and :code:`ruler_x_padding`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Additional padding for ruler. Makes the ruler a little larger and more readable.
+
+.. code-block:: console
+
+   ruler_padding 1.0
+   ruler_x_padding 5.0
+
+:code:`visual_mark_next_page_fraction`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When we go to the next page while in visual mark mode, this setting determines which location of screen the new line should be located at. The values are between -1 and 1. With 0 being the middle of the screen and 1 and -1 being the top and bottom of the screen respectively.
+
+.. code-block:: console
+
+   visual_mark_next_page_fraction  0.5
+
+:code:`visual_mark_next_page_threshold`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Determines at which point in screen we move to the next page. Acceptable range is between 0 and :code:`visual_mark_next_page_fraction`.
 
 :code:`search_highlight_color`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -118,6 +151,11 @@ This causes the search engine configures using :code:`search_url_g` to be used w
 
 The fraction by which we enlarge the page when zooming in/out.
 
+:code:`wheel_zoom_on_cursor`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If set, when using mouse wheel to zoom we zoom in on mouse cursor instead of middle of screen.
+
 
 :code:`vertical_move_amount` and :code:`horizontal_move_amount`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -134,6 +172,11 @@ The fraction of screen by which we move when executing :code:`screen_down` and :
 
 Displays a simplified flat table of contents instead of a hierarchial one. This can improve performance for documents with very large number of table of contents entries (thousands).
 Acceptable values are 0 and 1.
+
+:code:`collapsed_toc`
+^^^^^^^^^^^^^^^^^^^^^
+
+If set, we initially collapse all table of content entries.
 
 :code:`should_use_multiple_monitors`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -164,16 +207,6 @@ The command to use when trying to do inverse search into a LaTeX document. %1 ex
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The color to use for highlights of type :code:`a` to :code:`z`.
-
-:code:`visual_mark_next_page_fraction`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-When moving to the next line using visual marker, this setting specifies the distance of the marker to the top of the screen in fractions of screen size when we decite to move the screen.
-
-:code:`visual_mark_next_page_threshold`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-When moving to the next line using visual marker, this setting determines at which point we decide to move the screen
 
 :code:`should_draw_unrendered_pages`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -278,7 +311,7 @@ Allow you to customize the appearance of status bar.
 :code:`execute_command_a` to :code:`execute_command_z`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Predefined shell commands to be executed using :code:`execute_predefined_command`. :code:`%1` expands to the path of the current file and :code:`%2` expands to name of the current file.
+Predefined shell commands to be executed using :code:`execute_predefined_command`. :code:`%1` expands to the path of the current file, :code:`%2` expands to name of the current file and :code:`%3` expands to current selected text.
 For example, suppose you have a command named :code:`ocr` which takes a file path and produces an OCR'd version of the document. You can add the following to you :code:`prefs_user.config`:
 
 .. code-block:: console
@@ -286,3 +319,89 @@ For example, suppose you have a command named :code:`ocr` which takes a file pat
    execute_command_o	ocr "%1"
 
 You can later quickly invoke this command by executing :code:`execute_predefined_command` and then pressing :code:`o`.
+
+.. warning::
+   The command parsing code in sioyek is not very good. For example it can not handle multiple commands like :code:`command1 args;command2` or commands that include spaces. If you want to run a complex command, first put all commands in a script file and then run the script file using using sioyek like this: :code:`/path/to/script.sh %1 %2 %3`.
+
+:code:`papers_folder_path`
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Path to a directory on your computer. Sioyek monitors the changes in this directory and if a new file is added to this directory while we have a pending portal, this file is automatically used as the destination of the portal. This is useful when creating a portal from a reference in a paper to the actual reference file.
+
+:code:`display_resolution_scale`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Manual resolution scaling. Can be useful for some very high resolution displays which report the wrong resolution.
+
+:code:`linear_filter`
+^^^^^^^^^^^^^^^^^^^^^^
+
+If set, we use linear texture filtering instead of the normal nearest neighbour filtering. This is useful when using manual display resolution scale which causes the nearest neighbour filter to look bad.
+
+:code:`main_window_size`, :code:`main_window_move`, :code:`helper_window_size`, :code:`helper_window_move`, :code:`single_main_window_size` and :code:`single_main_window_move`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Configures the size and position of the main window and the helper window. :code:`single_main_window_*` is used when helper window is closed and the other configs are used when both windows are opened. 
+These values are automatically written to :code:`auto.cong` file when sioyek exits but you can manually override them by setting them in your :code:`prefs_user.config`.
+
+.. code-block:: console
+
+   single_main_window_size    1824 988
+   single_main_window_move     22 21
+   main_window_size    1824 988
+   main_window_move     18 44
+   helper_window_size    1891 1033
+   helper_window_move     1951 0
+
+:code:`touchpad_sensitivity`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Can be used to adjust the sensitivity of the touchpad. 
+
+.. code-block:: console
+
+   touchpad_sensitivity    0.1
+
+:code:`page_separator_width` and :code:`page_separator_color`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Used to adjust the appearance of page separator.
+
+.. code-block:: console
+
+   page_separator_width 2
+   page_separator_color 0.5 0.5 0.5
+
+:code:`fit_to_page_width_ratio`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Ratio of screen width to use when using :code:`fit_to_screen_width_ratio` command. Can be useful for very wide screens.
+
+.. code-block:: console
+
+   fit_to_page_width_ratio 0.75
+
+:code:`create_table_of_contents_if_not_exists`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If set and the file doesn't have a table of contents, we use heuristic methods to create a table of contents. You can use :code:`max_created_toc_size` to prevent creating very large table of contents.
+
+.. code-block:: console
+
+   create_table_of_contents_if_not_exists 1
+   max_created_toc_size 5000
+
+:code:`force_custom_line_algorithm`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Use legacy line detection algorithm instead of the mupdf one.
+
+:code:`overview_size` and :code:`overview_offset`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adjust the size of overview window. The values are in normalized window coordinates between -1 and 1.
+
+.. code-block:: console
+
+   overview_size 0.852604 0.597729
+   overview_offset -0.0119792 0.120151
