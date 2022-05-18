@@ -132,13 +132,9 @@ Highlights
 
 You can highlight text in sioyek. Similar to marks, you can assign a "type" to each highlight using a lower case alphabet letter. Highlights of different types are distinguished by different colors.
 
-<<<<<<< HEAD
 - Select a piece of text and then press :code:`h` followed by a letter to create a highlight of that letter type. For example in order to create a highlight of tye "a" enter :code:`ha`. (:code:`add_highlight` command)
 - Alternatively, if you don't want to specify highlight type every time, you can execute :code:`add_highlight_with_current_type` command which uses the current highlight type to highlight the selected text. You can change the current highlight type by executing :code:`set_select_highlight_type` command.
 - You can toggle select highlight mode by executing :code:`toggle_select_highlight` command. While in this mode, all selected text will be highlighted using the selected highlight type.
-=======
-- Select a piece of text and then press :code:`h` followed by a letter to create a highlight of that letter type. For example in order to create a highlight of type "a" enter :code:`ha`. (:code:`add_highlight` command)
->>>>>>> 04de9164c1c81b92fefd31a0f269be20230a31a4
 - Press :code:`gh` to open a searchable list of the highlights in the current document. (:code:`goto_highlight` command)
 - Press :code:`gH` to open a searchable list of the highlights ina all documents. (:code:`goto_highlight_g` command)
 - You can execute :code:`goto_next_highlight` and :code:`goto_prev_highlight` to navigate the highlights in current document. If you want to navigate the highlights of selected type, you can use :code:`goto_next_highlight_of_type` and :code:`goto_prev_highlight_of_type` commands.
@@ -224,7 +220,6 @@ Miscellaneous
 - Press :code:`f5` to toggle presentation mode (:code:`toggle_presentation_mode` command).
 - You can use :code:`toggle_horizontal_scroll_lock` command to prevent the document from being scrolled horizontally (can be useful for touchpad users).
 - Use :code:`toggle_custom_color` to toggle the custom color scheme configured in :ref:`configuration:Configuration`.
-<<<<<<< HEAD
 - Use :code:`execute` to open a command line where you can execute shell commands. In this command line :code:`%1` expands to the full path of the current file, :code:`%2` expands to current file name and :code:`%3` expands to current selected text. You can also predefine commands and execute them quickly using :code:`execute_predefined_command`.
 - You can export a version of current PDF file with all bookmarks/highlights embedded in it (so it is available to other PDF software) by executing :code:`embed_annotations` command.
 - You can rotate the page by executing :code:`rotate_clockwise` and :code:`rotate_counterclockwise` commands.
