@@ -225,6 +225,6 @@ Miscellaneous
 - You can use :code:`toggle_horizontal_scroll_lock` command to prevent the document from being scrolled horizontally (can be useful for touchpad users).
 - Use :code:`toggle_custom_color` to toggle the custom color scheme configured in :ref:`configuration:Configuration`.
 <<<<<<< HEAD
-- Use :code:`execute` to open a command line where you can execute shell commands. In this command line :code:`%1` expands to the full path of the current file, :code:`%2` expands to current file name and :code:`%3` expands to current selected text. You can also predefine commands and execute them quickly using :code:`execute_predefined_command`.
+- Use :code:`execute` to open a command line where you can execute shell commands. In this command line :code:`%1` expands to the full path of the current file, :code:`%2` expands to current file name and :code:`%3` expands to current selected text. You can also predefine commands and execute them quickly using :code:`execute_predefined_command`. See `this post <https://ahrm.github.io/jekyll/update/2022/07/05/implementing-a-screen-reader-for-sioyek.html>`_ for examples of what is possible.
 - You can export a version of current PDF file with all bookmarks/highlights embedded in it (so it is available to other PDF software) by executing :code:`embed_annotations` command.
 - You can rotate the page by executing :code:`rotate_clockwise` and :code:`rotate_counterclockwise` commands.
