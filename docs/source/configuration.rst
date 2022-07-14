@@ -43,7 +43,7 @@ Specifies the background color of the app (this is different from the background
 
    background_color  r  g  b
 
-where r,g and b red, green and blue values between 0 and 1. For example in order to set the bavkground color to gray we can add the following to our :code:`prefs_user.config`:
+where r,g and b red, green and blue values between 0 and 1. For example in order to set the background color to gray we can add the following to our :code:`prefs_user.config`:
 
 .. code-block:: console
 
