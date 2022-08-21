@@ -6,19 +6,35 @@ Pre-built Binaries
 You can find the latest pre-built binaries of sioyek here:
 https://github.com/ahrm/sioyek/releases
 
+Homebrew Cask
+-------------
+There is a homebrew cask available here: https://formulae.brew.sh/cask/sioyek. Install by running:
+
+.. code-block:: console
+
+   brew install --cask sioyek
+
+
 Third-party packages for Linux
 ------------------------------
 If you prefer to install sioyek with a package manager, you can look at this list.
 Please note that they are provided by third party packagers.
 USE AT YOUR OWN RISK! If you're reporting a bug for a thrid-party package, please mention which package you're using.
 
-+----------+------------------------------------------------------------------------------+------------------------------------------------+
-|   Distro |                                Link                                          |                  Maintainer                    |
-+==========+==============================================================================+================================================+
-|  Arch    |`AUR Sioyek-git <https://aur.archlinux.org/packages/sioyek-git/>`_            | `randomn4me <https://github.com/randomn4me>`_  |
-+----------+------------------------------------------------------------------------------+------------------------------------------------+
-|  Fedora  |`Copr endle/sioyek <https://copr.fedorainfracloud.org/coprs/endle/sioyek/>`_  | `Endle <https://github.com/Endle>`_            |
-+----------+------------------------------------------------------------------------------+------------------------------------------------+
++----------------------+--------------------------------------------------------------------------------------------------------------------------+
+| Distro               | Link                                                                                                                     |
++======================+==========================================================================================================================+
+| Flathub              | https://flathub.org/apps/details/com.github.ahrm.sioyek                                                                  |
++----------------------+--------------------------------------------------------------------------------------------------------------------------+
+| Alpine               | https://pkgs.alpinelinux.org/packages?name=sioyek                                                                        |
++----------------------+--------------------------------------------------------------------------------------------------------------------------+
+| AUR Sioyek-git       | https://aur.archlinux.org/packages/sioyek-git/                                                                           |
++----------------------+--------------------------------------------------------------------------------------------------------------------------+
+| AUR sioyek-appimage  | https://aur.archlinux.org/packages/sioyek-appimage/                                                                      |
++----------------------+--------------------------------------------------------------------------------------------------------------------------+
+| NixOS                | https://search.nixos.org/packages?channel=unstable&show=sioyek&from=0&size=50&sort=relevance&type=packages&query=sioyek  |
++----------------------+--------------------------------------------------------------------------------------------------------------------------+
+
 
 
 Building from source

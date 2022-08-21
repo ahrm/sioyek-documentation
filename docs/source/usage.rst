@@ -24,6 +24,7 @@ Opening Files
 - Press :code:`<Shift o>` (:code:`O`) to open a searchable list of recently opened files. (:code:`open_prev_doc` command)
 - Press :code:`<Ctrl o>` to open an embedded file system browser. (:code:`open_document_embedded` command)
 - Press :code:`<Ctrl Shift o>` to open an embedded file system browser rooted in the current document folder. (:code:`open_document_embedded_from_current_path` command)
+- You can also drag files into sioyek window to open them.
 
 
 Basic Movement

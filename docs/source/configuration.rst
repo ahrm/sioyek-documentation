@@ -162,7 +162,7 @@ If set, when using mouse wheel to zoom we zoom in on mouse cursor instead of mid
 
 How many inches we move vertically/horizontally when performing move_* commands.
 
-:code:`move_screen_percentage`
+:code:`move_screen_ratio`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The fraction of screen by which we move when executing :code:`screen_down` and :code:`screen_up` commands. (note that despite the name, the values are fractions between 0 and 1, not percentages)
@@ -193,7 +193,15 @@ If the last opened document is empty, load the tutorial pdf instead.
 :code:`should_launch_new_instance`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. warning::
+   This is deprecated. Use `should_launch_new_window` instead.
+
 If it is 0, then we use the previous instance of sioyek when launching a new file, otherwise a new instance is launched every time we open a new file.
+
+:code:`should_launch_new_window`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If it is 0, then we use the previous window of sioyek when opening a new file, otherwise a new window is opened every time we open a new file.
 
 :code:`inverse_search_command`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -212,11 +220,6 @@ The color to use for highlights of type :code:`a` to :code:`z`.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If set, we display a checkerboard pattern for unrendered pages (by default we display nothing).
-
-:code:`hover_overview`
-^^^^^^^^^^^^^^^^^^^^^^
-
-Displays an overview of destination when hovering over a link with mouse.
 
 :code:`rerender_overview`
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -405,3 +408,62 @@ Adjust the size of overview window. The values are in normalized window coordina
 
    overview_size 0.852604 0.597729
    overview_offset -0.0119792 0.120151
+
+:code:`show_doc_path`
+^^^^^^^^^^^^^^^^^^^^^
+
+Show the full document path instead of just the file name in list of recently opened documents.
+
+:code:`should_warn_about_user_key_override`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If set, we warn the user in command line when overriding already degined keybinds.
+
+:code:`single_click_selects_words`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If set, single clicking and dragging mouse selects entire words rather than characters.
+
+:code:`shift_click_command`, :code:`control_click_command`, :code:`alt_click_command`, :code:`shift_right_click_command`, :code:`control_right_click_command`, and :code:`alt_right_click_command`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Custom commands to run when mouse click is pressed while modifier keys are held down. For example:
+
+.. code-block:: console
+
+   control_click_command overview_under_cursor
+
+
+If set, single clicking and dragging mouse selects entire words rather than characters.
+
+:code:`use_legacy_keybinds`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+By default we use legacy keybindings which have some problems. For example to bind the :code:`%` key, you would have to enter something like this:
+
+.. code-block:: console
+
+   command <S-%>
+
+which is a little weird. Also legacy keybinds don't work well with some keyboard layouts. If you set :code:`use_legacy_keybinds` to 0, then we use a new method for keybind parsing which allows you to do something like this:
+
+.. code-block:: console
+
+   command %
+
+which also works with all keyboard layouts. Since this is a backwards incompatible change, :code:`use_legacy_keybinds` is activated by default.
+
+:code:`multiline_menus`
+^^^^^^^^^^^^^^^^^^^^^^^
+
+If set, we show long menu items in multiple lines rather than truncating them.
+
+:code:`start_with_helper_window`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Open helper window when sioyek starts.
+
+:code:`prerender_next_page_presentation`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When in presentation mode, we pre-render the next page to remove flickering when moving between pages.
