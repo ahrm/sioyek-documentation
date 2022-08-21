@@ -11,3 +11,4 @@ Contents
    installation
    usage
    configuration
+   scripting
