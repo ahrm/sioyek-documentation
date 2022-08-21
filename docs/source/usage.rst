@@ -98,7 +98,7 @@ Search
 - Press :code:`/` or :code:`<Ctrl f>` to open the search menu. (:code:`search` command)
 - Once a search is initiated, you can press :code:`n` to go to the next match or :code:`N` to go to the previous match. (:code:`next_item` and :code:`previous_item` commands)
 - You can enter :code:`c/` to search only the current chapter. (:code:`chapter_search` command).
-- You can limit the search range to specific page range using the following syntax in the search bar :code:`<begin,end>search term`. For example, if you want to search for the term 'Figure' in pages 20 to 30, you can enter the following::
+- You can limit the search range to a specific page range using the following syntax in the search bar :code:`<begin,end>search term`. For example, if you want to search for the term 'Figure' in pages 20 to 30, you can enter the following::
 
    <20,30>Figure
 
@@ -112,7 +112,7 @@ term that was defined a few pages ago, or perhaps the current paragraph is refer
 
 
 - In order to create a mark, first press :code:`m` (:code:`set_mark` command) followed by an alphabet symbol (this symbol will be the name of the mark, you can have multiple marks with different names). For example, in order to create a mark named :code:`a` for your current location, enter :code:`ma`.
-- You can go to a mark by  pressing |bt| followd by the name of the mark (note that |bt| is different from single quote :code:`'`. |bt| usually is on the same key as :code:`~`). For example, in order to go back to the mark created in the previous example, enter |bta|. (:code:`goto_mark` command)
+- You can go to a mark by  pressing |bt| followed by the name of the mark (note that |bt| is different from single quote :code:`'`. |bt| usually is on the same key as :code:`~`). For example, in order to go back to the mark created in the previous example, enter |bta|. (:code:`goto_mark` command)
 - Marks are persistent (they are saved even when sioyek is closed).
 - Lower case marks are local to the current document but upper case marks are global across sioyek.
 
@@ -133,11 +133,11 @@ Highlights
 
 You can highlight text in sioyek. Similar to marks, you can assign a "type" to each highlight using a lower case alphabet letter. Highlights of different types are distinguished by different colors.
 
-- Select a piece of text and then press :code:`h` followed by a letter to create a highlight of that letter type. For example in order to create a highlight of tye "a" enter :code:`ha`. (:code:`add_highlight` command)
+- Select a piece of text and then press :code:`h` followed by a letter to create a highlight of that letter type. For example in order to create a highlight of type "a" enter :code:`ha`. (:code:`add_highlight` command)
 - Alternatively, if you don't want to specify highlight type every time, you can execute :code:`add_highlight_with_current_type` command which uses the current highlight type to highlight the selected text. You can change the current highlight type by executing :code:`set_select_highlight_type` command.
 - You can toggle select highlight mode by executing :code:`toggle_select_highlight` command. While in this mode, all selected text will be highlighted using the selected highlight type.
 - Press :code:`gh` to open a searchable list of the highlights in the current document. (:code:`goto_highlight` command)
-- Press :code:`gH` to open a searchable list of the highlights ina all documents. (:code:`goto_highlight_g` command)
+- Press :code:`gH` to open a searchable list of the highlights in all documents. (:code:`goto_highlight_g` command)
 - You can execute :code:`goto_next_highlight` and :code:`goto_prev_highlight` to navigate the highlights in current document. If you want to navigate the highlights of selected type, you can use :code:`goto_next_highlight_of_type` and :code:`goto_prev_highlight_of_type` commands.
 - In order to delete a highlight, first left click on the highlight and then enter :code:`dh` (:code:`delete_highlight` command). Alternatively, you can press the :code:`delete` button on the keyboard in the highlight list.
 
@@ -149,7 +149,7 @@ Portals
 
 Sometimes, a paragraph is entirely about a previous part of the document. For example maybe the paragraph is explaining the data in a previous table or describing a previous figure or answering a previous exercise. In such situations, it is usually very annoying to keep alternating between the paragraph and the referenced material. Using portals, you can link the location of the paragraph with the location of the referenced material and whenever you scroll to the paragraph, the referenced content is automatically displayed in a secondary window.
 
-- In order to create a portal, press :code:`p` (:code:`portal` command, note that portals are called "links" in the sioyek source code, however, in the documentation we refer to them as portal so as not to confuse them with PDF links). This creates an incomplete portal with the current location as the source. Now, navigate to the location of the referenced materail and press :code:`p` again. This completes the portal with the second location as the destination.
+- In order to create a portal, press :code:`p` (:code:`portal` command, note that portals are called "links" in the sioyek source code, however, in the documentation we refer to them as portal so as not to confuse them with PDF links). This creates an incomplete portal with the current location as the source. Now, navigate to the location of the referenced material and press :code:`p` again. This completes the portal with the second location as the destination.
 - Alternatively, you can create portals by pressing :code:`p` and then clicking on a PDF link. This automatically creates a portal from the location of the link to the link destination. Also you can middle click after pressing :code:`p` which uses `SmartJump`_ to determine the destination.
 - To view portal destinations, you need to open the helper window. You can open/close the helper widow by pressing :code:`f12` (:code:`toggle_window_configuration` command). This window automatically shows the destination of the portal with the closest source to the current location. This window is more useful for users with multiple monitors.
 - You can delete the closest portal by entering :code:`dp` (:code:`delete_portal` command)
