@@ -85,7 +85,7 @@ If you right click on a line of text in a PDF file, sioyek displays a visual hig
 
 - You can move the visual mark to the next/previous line by pressing :code:`j`/:code:`k` (:code:`move_visual_mark_down` and :code:`move_visual_mark_up` commands).
 - You can toggle visual scroll mode by pressing :code:`f7` (:code:`toggle_visual_scroll` command). In this mode, mouse wheel moves the visual mark up and down.
-- If you set :code:`ruler_mode 0` in your :code:`prefs_user.confgi`, we just highlight below the current line, if you set :code:`ruler_mode 1` we draw a rectangle around the current line. The following figure shows the difference between these two settings.
+- If you set :code:`ruler_mode 0` in your :code:`prefs_user.config`, we just highlight below the current line, if you set :code:`ruler_mode 1` we draw a rectangle around the current line. The following figure shows the difference between these two settings.
 
 .. image:: images/combined.png
 
