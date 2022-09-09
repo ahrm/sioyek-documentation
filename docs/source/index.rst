@@ -10,5 +10,6 @@ Contents
 
    installation
    usage
+   commands
    configuration
    scripting
