@@ -40,6 +40,8 @@ Sioyek provides the following possible inputs to custom commands:
 * :code:`%{file_path}`: expands to current document's full path
 * :code:`%{file_name}`: expands to current document's file name
 * :code:`%{selected_text}`: expands to current selected text
+* :code:`%{selection_begin_document}`: if some text is selected expands to the page number and x and y coordinates in the page's coordinate system of the start of the selection
+* :code:`%{selection_end_document}`: if some text is selected expands to the page number and x and y coordinates in the page's coordinate system of the end of the selection
 * :code:`%{line_text}`: expands to text of the current selected line when in sioyek's visual line mode
 * :code:`%{page_number}`: expands to current page number (zero-indexed)
 * :code:`%{command_text}`: If this argument is present in the commands, sioyek prompts the user to enter a text and expands :code:`command_text` to that text.
