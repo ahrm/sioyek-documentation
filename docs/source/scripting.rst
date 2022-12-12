@@ -50,6 +50,8 @@ Sioyek provides the following possible inputs to custom commands:
 * :code:`%{local_database}`: expands to the path of sioyek's local database file
 * :code:`%{shared_database}`: expands to the path of sioyek's shared database file
 * :code:`%{zoom_level}`: expands to the current document's zoom level
+* :code:`%{selection_begin_document}` and :code:`%{selection_end_document}`: expands to the current text selection in document space
+* :code:`%{selected_rect}`: expands to the current selected rectangle using :code:`select_rect` command
 
 
 .. warning::
@@ -142,7 +144,7 @@ All coordinates in database files are in "absolute document space", which might 
 * y-offset in points relative to the top left of page (1 point = 1/72 inch)
 
 In absolute document space, we conceptually view the document as a list of pages stacked vertically. So we don't have page numbers anymore but the y-offset of previous pages are added, so for example, the following page in document space:
-:code:`(2, 100, 200)` is translated to the following coordinate in absolute document space: :code:`(100, page_height[0] + page_heights[1] + 200)`.
+:code:`(2, 100, 200)` is translated to the following coordinate in absolute document space (note that in this example pages are zero-indexed, so page 2 is the third page of the document): :code:`(100 - page_width[2] / 2, page_height[0] + page_heights[1] + 200)`.
 In order to convert between absolute document space and document space, you can use :code:`to_absolute` and :code:`to_document` functions in https://github.com/ahrm/sioyek-python-extensions/blob/main/src/sioyek/sioyek.py .
 
 Database files

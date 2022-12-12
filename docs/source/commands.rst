@@ -412,3 +412,18 @@ Toggle the scrollbar.
 :code:`overview_to_portal`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Open the overview window to the closest portal to current document location.
+
+:code:`select_rect`
+^^^^^^^^^^^^^^^^^^^
+
+Select a rectangle (can be used in extensions using :code:`%{selected_rectangle}` variable).
+
+:code:`donate`
+^^^^^^^^^^^^^^
+
+Open donation page.
+
+:code:`overview_next_item` and :code:`overview_prev_item`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Open overviews to previous/next search items.

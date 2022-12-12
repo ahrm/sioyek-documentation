@@ -26,7 +26,8 @@ Opening Files
 - Press :code:`<Ctrl Shift o>` to open an embedded file system browser rooted in the current document folder. (:code:`open_document_embedded_from_current_path` command)
 - You can also drag files into sioyek window to open them.
 - You can presss :code:`delete` in the list of recently opened files to remove a file from the list (doesn't remove the file on the filesystem).
-
+- If you want to open a file in a new sioyek window, you can pass the :code:`--new-window` command line option. Or you could open a new window from within sioyek by pressing :code:`<Ctrl t>`.
+- You can switch between opened sioyek windows using :code:`goto_window` command.
 
 Basic Movement
 ^^^^^^^^^^^^^^
@@ -39,6 +40,7 @@ Basic Movement
 - Press :code:`<Ctrl PageDown>`/:code:`<Ctrl PageUp>` to go to the next/previous page. (:code:`next_page` and :code:`previous_page` commands)
 - Press :code:`t` to open a searchable table of contents. You can jump to table of content entries by selecting. (:code:`goto_toc`)
 - Press :code:`gc` to go to the next chapter and :code:`gC` to go to the previous chapter. (:code:`next_chapter` and :code:`prev_chapter` commands)
+- We don't have a scrollbar by default. If you want to enable it, you can run :code:`toggle_scrollbar`
 
 Zoom
 ^^^^
@@ -102,6 +104,7 @@ Search
 - You can limit the search range to a specific page range using the following syntax in the search bar :code:`<begin,end>search term`. For example, if you want to search for the term 'Figure' in pages 20 to 30, you can enter the following::
 
    <20,30>Figure
+- Using :code:`overview_next_item` and :code:`overview_prev_item` commands, you can open an overview to search results instead of jumping to them.
 
 .. _Marks:
 

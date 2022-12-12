@@ -19,17 +19,17 @@ Syntax of :code:`keys.config` files
 
    command        k             (command is executed when k is pressed)
    command        <C-k>         (command is executed when k is pressed while holding control)
-   command        <S-k>         (command is executed when k is pressed while holding shift)
+   command        K             (command is executed when K is entered, which is shift+k)
    command        <A-k>         (command is executed when k is pressed while holding alt)
-   command        <S-+>         (command is executed when = is pressed while holding shift.
-                                 Note that <S-=> would not work because of a bug in the command system so
-                                 when prefixing non-ascii keys with shift, you have to specify the shift
-                                 modified key in addition to the shift modifier)
+   command        +             (command is executed when = is pressed while holding shift)
    command        <C-S-k>       (command is executed when k is pressed while holding control and shift)
    command        gg            (command is executed when g is pressed twice)
    command        gt            (command is executed when g is pressed and then t is pressed)
-   command        g<C-n><S-d>t  (command is executed when g is pressed and then n is pressed while holding\
+   command        g<C-n>Dt      (command is executed when g is pressed and then n is pressed while holding\
                                  control and then d is pressed while holding shift and then t is pressed)
+
+                                 you can execute multiple commands using the following syntax:
+   command1;command2;command3        <keybinding>
 
 
 Prefrences in :code:`prefs.config` file
@@ -467,3 +467,73 @@ Open helper window when sioyek starts.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When in presentation mode, we pre-render the next page to remove flickering when moving between pages.
+
+:code:`highlight_middle_click`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If enabled, highlights the selected text by middle clicking on it.
+
+:code:`smooth_scroll_speed` and :code:`smooth_scroll_drag`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When smooth scrolling is enabled (using :code:`toggle_smooth_scroll` command), these control the speed and slowdown of movement.
+
+.. code-block:: console
+
+   smooth_scroll_speed 3
+   smooth_scroll_drag 3000
+
+:code:`super_fast_search`
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If enabled, indexes the document text and considerably speeds of searching. It also enables :code:`regex_search` command which uses the index to search for regular expressions.
+
+:code:`show_closest_bookmark_in_statusbar`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If enabled, displays the text for closest bookmark in the statusbar.
+
+:code:`show_close_portal_in_statusbar`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If enabled, it displays a statusbar message when we are close to a portal.
+
+:code:`prerender_page_count`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The number of pages to prerender. The larger it is, the more memory we use but there will be less flickering when quickly moving pages.
+
+:code:`case_sensitive_search`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+It is enabled by default. If disabled, we use case-insensitive searching.
+
+:code:`show_document_name_in_statusbar`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Displays the document name in sioyek's statusbar.
+
+:code:`ui_background_color` and :code:`ui_text_color`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The background and text color of (unselected) UI elements.
+
+:code:`ui_selected_background_color` and :code:`ui_selected_text_color`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The background and text color of selected UI elements.
+
+:code:`numeric_tags`
+^^^^^^^^^^^^^^^^^^^^
+
+If enabled we use numeric (instead of alphabetical) tags when executing :code:`keyboard_*` commands.
+
+:code:`source`
+^^^^^^^^^^^^^^
+
+Includes another config file, which is useful for themes and extensions.
+
+.. code-block:: console
+
+   # includes file.config in this configuration file
+   source /path/to/file.config
