@@ -1,7 +1,7 @@
 Sioyek Documentation
 ====================
 
-**Sioyek** is a PDF viewer designed for reading reserach papers and technical books.
+**Sioyek** is a PDF viewer designed for reading research papers and technical books.
 
 Contents
 --------
