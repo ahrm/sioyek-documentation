@@ -25,7 +25,7 @@ Opening Files
 - Press :code:`<Ctrl o>` to open an embedded file system browser. (:code:`open_document_embedded` command)
 - Press :code:`<Ctrl Shift o>` to open an embedded file system browser rooted in the current document folder. (:code:`open_document_embedded_from_current_path` command)
 - You can also drag files into sioyek window to open them.
-- You can presss :code:`delete` in the list of recently opened files to remove a file from the list (doesn't remove the file on the filesystem).
+- You can press :code:`delete` in the list of recently opened files to remove a file from the list (doesn't remove the file on the filesystem).
 - If you want to open a file in a new sioyek window, you can pass the :code:`--new-window` command line option. Or you could open a new window from within sioyek by pressing :code:`<Ctrl t>`.
 - You can switch between opened sioyek windows using :code:`goto_window` command.
 
@@ -92,7 +92,7 @@ If you right click on a line of text in a PDF file, sioyek displays a visual hig
 
 .. image:: images/combined.png
 
-- While a line is highlighted, you can press :code:`l` (:code:`overview_definition` command) to create an overview to the reference in current lien (for example if there is a :code:`Figure 2.3` in the current highlighted line, we create an overview to the figure location. If there are multiple references in the same line, we use the first reference)
+- While a line is highlighted, you can press :code:`l` (:code:`overview_definition` command) to create an overview to the reference in current line (for example if there is a :code:`Figure 2.3` in the current highlighted line, we create an overview to the figure location. If there are multiple references in the same line, we use the first reference)
 - Similarly you can press :code:`]` (:code:`portal_to_definition`) and :code:`ctrl+]` (:code:`goto_definition`) to create a portal or jump to the definition.
 
 Search
@@ -125,7 +125,7 @@ Bookmarks
 
 Bookmarks are similar to marks except they use a textual description instead of an alphabet letter.
 
-- You can add a bookmark by pressing :code:`b` (:code:`add_bookmark` command) and then entering a textual desciption of the bookmark in the opened menu.
+- You can add a bookmark by pressing :code:`b` (:code:`add_bookmark` command) and then entering a textual description of the bookmark in the opened menu.
 - You can open a searchable list of the bookmarks in the current document by entering :code:`gb` (:code:`goto_bookmark` command).
 - You can open a searchable list of all the bookmarks in all documents by entering :code:`gB` (:code:`goto_bookmark_g` command).
 - You can delete the closest bookmark to the current location by entering :code:`db` (:code:`delete_bookmark` command). You can also delete bookmarks directly in the bookmarks list by selecting the bookmark and then pressing the :code:`delete` button on keyboard.
@@ -182,11 +182,11 @@ External Search
 Synctex
 ^^^^^^^
 - Press :code:`f4` to toggle synctex mode (:code:`toggle_synctex` command). While in this mode, right clicking on any text opens the corresponding :code:`tex` file in the appropriate location.
-- You can configure the synctex inverse search command using :code:`inverse_search_command` config in :code:`prefs.config` . Here is an example for VsCode (%1 stands for the name of the file and %2 stands for the line number in the file)::
+- You can configure the synctex inverse search command using :code:`inverse_search_command` config in :code:`prefs.config` . Here is an example for VS Code (%1 stands for the name of the file and %2 stands for the line number in the file)::
 
       inverse_search_command "C:\path\to\vscode\Code.exe" "C:\path\to\vscode\resources\app\out\cli.js" --ms-enable-electron-run-as-node -r -g "%1:%2"
       
-- Here is a sample configuration for latex workshop in VSCode::
+- Here is a sample configuration for latex workshop in VS Code::
 
    "latex-workshop.view.pdf.external.synctex.command": "C:\\path\\to\\sioyek.exe",
    "latex-workshop.view.pdf.external.synctex.args": [
@@ -199,7 +199,7 @@ Synctex
     "%LINE%",
     "%PDF%" ] 
 
-- Here is a sample configuration for VimTex::
+- Here is a sample configuration for VimTeX::
 
    let g:vimtex_view_method = 'sioyek'
 
