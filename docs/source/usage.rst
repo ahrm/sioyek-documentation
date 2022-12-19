@@ -182,11 +182,11 @@ External Search
 Synctex
 ^^^^^^^
 - Press :code:`f4` to toggle synctex mode (:code:`toggle_synctex` command). While in this mode, right clicking on any text opens the corresponding :code:`tex` file in the appropriate location.
-- You can configure the synctex inverse search command using :code:`inverse_search_command` config in :code:`prefs.config` . Here is an example for VsCode (%1 stands for the name of the file and %2 stands for the line number in the file)::
+- You can configure the synctex inverse search command using :code:`inverse_search_command` config in :code:`prefs.config` . Here is an example for VS Code (%1 stands for the name of the file and %2 stands for the line number in the file)::
 
       inverse_search_command "C:\path\to\vscode\Code.exe" "C:\path\to\vscode\resources\app\out\cli.js" --ms-enable-electron-run-as-node -r -g "%1:%2"
       
-- Here is a sample configuration for latex workshop in VSCode::
+- Here is a sample configuration for latex workshop in VS Code::
 
    "latex-workshop.view.pdf.external.synctex.command": "C:\\path\\to\\sioyek.exe",
    "latex-workshop.view.pdf.external.synctex.args": [
@@ -199,7 +199,7 @@ Synctex
     "%LINE%",
     "%PDF%" ] 
 
-- Here is a sample configuration for VimTex::
+- Here is a sample configuration for VimTeX::
 
    let g:vimtex_view_method = 'sioyek'
 
