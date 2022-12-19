@@ -92,7 +92,7 @@ If you right click on a line of text in a PDF file, sioyek displays a visual hig
 
 .. image:: images/combined.png
 
-- While a line is highlighted, you can press :code:`l` (:code:`overview_definition` command) to create an overview to the reference in current lien (for example if there is a :code:`Figure 2.3` in the current highlighted line, we create an overview to the figure location. If there are multiple references in the same line, we use the first reference)
+- While a line is highlighted, you can press :code:`l` (:code:`overview_definition` command) to create an overview to the reference in current line (for example if there is a :code:`Figure 2.3` in the current highlighted line, we create an overview to the figure location. If there are multiple references in the same line, we use the first reference)
 - Similarly you can press :code:`]` (:code:`portal_to_definition`) and :code:`ctrl+]` (:code:`goto_definition`) to create a portal or jump to the definition.
 
 Search
@@ -125,7 +125,7 @@ Bookmarks
 
 Bookmarks are similar to marks except they use a textual description instead of an alphabet letter.
 
-- You can add a bookmark by pressing :code:`b` (:code:`add_bookmark` command) and then entering a textual desciption of the bookmark in the opened menu.
+- You can add a bookmark by pressing :code:`b` (:code:`add_bookmark` command) and then entering a textual description of the bookmark in the opened menu.
 - You can open a searchable list of the bookmarks in the current document by entering :code:`gb` (:code:`goto_bookmark` command).
 - You can open a searchable list of all the bookmarks in all documents by entering :code:`gB` (:code:`goto_bookmark_g` command).
 - You can delete the closest bookmark to the current location by entering :code:`db` (:code:`delete_bookmark` command). You can also delete bookmarks directly in the bookmarks list by selecting the bookmark and then pressing the :code:`delete` button on keyboard.
