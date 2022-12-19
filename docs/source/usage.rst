@@ -25,7 +25,7 @@ Opening Files
 - Press :code:`<Ctrl o>` to open an embedded file system browser. (:code:`open_document_embedded` command)
 - Press :code:`<Ctrl Shift o>` to open an embedded file system browser rooted in the current document folder. (:code:`open_document_embedded_from_current_path` command)
 - You can also drag files into sioyek window to open them.
-- You can presss :code:`delete` in the list of recently opened files to remove a file from the list (doesn't remove the file on the filesystem).
+- You can press :code:`delete` in the list of recently opened files to remove a file from the list (doesn't remove the file on the filesystem).
 - If you want to open a file in a new sioyek window, you can pass the :code:`--new-window` command line option. Or you could open a new window from within sioyek by pressing :code:`<Ctrl t>`.
 - You can switch between opened sioyek windows using :code:`goto_window` command.
 
