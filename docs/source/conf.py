@@ -5,8 +5,8 @@
 project = 'Sioyek'
 author = 'Ali Mostafavi'
 
-release = '0.31'
-version = '0.31.6'
+release = '2.0.0'
+version = '2.0.0'
 
 # -- General configuration
 
