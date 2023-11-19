@@ -63,7 +63,7 @@ Windows
 
 1. Install Visual Studio (tested on 2019, other relatively recent versions should work too)
 2. Install Qt 5 and make sure qmake is in :code:`PATH`.
-3. Clone the repository and build using 64 bit Visual Studio Developer Commnand Prompt:
+3. Clone the repository and build using 64 bit Visual Studio Developer Command Prompt:
 
 .. code-block:: console
 
