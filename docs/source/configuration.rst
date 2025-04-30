@@ -32,12 +32,12 @@ Syntax of :code:`keys.config` files
    command1;command2;command3        <keybinding>
 
 
-Prefrences in :code:`prefs.config` file
+Preferences in :code:`prefs.config` file
 ---------------------------------------
 
 :code:`background_color`
 ^^^^^^^^^^^^^^^^^^^^^^^^
-Specifies the background color of the app (this is different from the background color of PDF page which is configured using :ref:`customcolor`, this color is only shown when the displayed page is smaller than the srceen). The syntax to set colors is:
+Specifies the background color of the app (this is different from the background color of PDF page which is configured using :ref:`customcolor`, this color is only shown when the displayed page is smaller than the screen). The syntax to set colors is:
 
 .. code-block:: console
 
@@ -122,7 +122,7 @@ The color used to highlight links in PDF files.
 :code:`synctex_highlight_color`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Highlight color for synctex forward search highlights.
+Highlight color for SyncTeX forward search highlights.
 
 
 :code:`search_url_a` to :code:`search_url_z`
@@ -170,7 +170,7 @@ The fraction of screen by which we move when executing :code:`screen_down` and :
 :code:`flat_toc`
 ^^^^^^^^^^^^^^^^
 
-Displays a simplified flat table of contents instead of a hierarchial one. This can improve performance for documents with very large number of table of contents entries (thousands).
+Displays a simplified flat table of contents instead of a hierarchical one. This can improve performance for documents with very large number of table of contents entries (thousands).
 Acceptable values are 0 and 1.
 
 :code:`collapsed_toc`
@@ -188,7 +188,7 @@ Acceptable values are 0 and 1.
 :code:`should_load_tutorial_when_no_other_file`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If the last opened document is empty, load the tutorial pdf instead.
+If the last opened document is empty, load the tutorial PDF instead.
 
 :code:`should_launch_new_instance`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -205,7 +205,7 @@ If it is 0, then we use the previous window of sioyek when opening a new file, o
 
 :code:`inverse_search_command`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The command to use when trying to do inverse search into a LaTeX document. %1 expands to the name of the file and %2 expans to the line number. For example:
+The command to use when trying to do inverse search into a LaTeX document. %1 expands to the name of the file and %2 expands to the line number. For example:
 
 .. code-block:: console
 
@@ -244,7 +244,7 @@ If set, we sort the bookmarks by their location instead of their creation time.
 :code:`shared_database_path`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The path of :code:`shared.db` database file. You can set this path to be in a synchronized folder (for example a dropbox folder) and sioyek data will be automatically synchronized across your devices.
+The path of :code:`shared.db` database file. You can set this path to be in a synchronized folder (for example a Dropbox folder) and sioyek data will be automatically synchronized across your devices.
 
 :code:`font_size`
 ^^^^^^^^^^^^^^^^^
@@ -273,7 +273,7 @@ A prefix character to use before list of items (for example can be used to displ
 :code:`check_for_updates_on_startup`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If set, sioyek checkes for new versions on startup and notifies the user if a new version if available.
+If set, sioyek checks for new versions on startup and notifies the user if a new version if available.
 
 .. code-block:: console
 
@@ -397,7 +397,7 @@ If set and the file doesn't have a table of contents, we use heuristic methods t
 :code:`force_custom_line_algorithm`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Use legacy line detection algorithm instead of the mupdf one.
+Use legacy line detection algorithm instead of the MuPDF one.
 
 :code:`overview_size` and :code:`overview_offset`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -417,7 +417,7 @@ Show the full document path instead of just the file name in list of recently op
 :code:`should_warn_about_user_key_override`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If set, we warn the user in command line when overriding already degined keybinds.
+If set, we warn the user in command line when overriding already designated keybinds.
 
 :code:`single_click_selects_words`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -501,7 +501,7 @@ If enabled, it displays a statusbar message when we are close to a portal.
 :code:`prerender_page_count`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The number of pages to prerender. The larger it is, the more memory we use but there will be less flickering when quickly moving pages.
+The number of pages to pre-render. The larger it is, the more memory we use but there will be less flickering when quickly moving pages.
 
 :code:`case_sensitive_search`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
