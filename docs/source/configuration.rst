@@ -178,6 +178,12 @@ Acceptable values are 0 and 1.
 
 If set, we initially collapse all table of content entries.
 
+:code:`should_highlight_unselected_search`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If it is 1, all matches for a search are immediately highlighted with a color different from the active match.
+Acceptable values are 0 and 1.
+
 :code:`should_use_multiple_monitors`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
