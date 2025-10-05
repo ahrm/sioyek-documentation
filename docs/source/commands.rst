@@ -5,7 +5,7 @@ All sioyek keybindings execute some command. You can open a searchable list of a
 Below is a list of all available sioyek commands.
 
 
-:code:`goto_begining`
+:code:`goto_beginnig`
 ^^^^^^^^^^^^^^^^^^^^^
 Go to the beginning of the document. If prefixed with a number, it will go to that page number.
 
