@@ -498,7 +498,7 @@ If enabled, displays the text for closest bookmark in the statusbar.
 
 If enabled, it displays a statusbar message when we are close to a portal.
 
-:code:`prerender_page_count`
+:code:`prerendered_page_count`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The number of pages to pre-render. The larger it is, the more memory we use but there will be less flickering when quickly moving pages.
