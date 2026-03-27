@@ -24,6 +24,48 @@ You can use custom commands the same way you would use sioyek commands. For exam
 
 or you could search and run them using sioyek's command palette.
 
+Defining Custom commands in MacOS
+---------------------------------
+
+1. Setup Folder
+^^^^^^^^^^^^^^^
+
+Create a directory in .config folder::
+
+   ~/.config/sioyek/prefs_user.config
+
+
+2. Install Wrapper
+^^^^^^^^^^^^^^^^^^
+
+Run::
+
+   python3 -m pip install sioyek
+
+If you are using multiple version of python3 on your Mac then note down which version of python you are installing the wrpper into.
+
+
+3. Add Custom Command
+^^^^^^^^^^^^^^^^^^^^^^
+
+In ``prefs_user.config`` add::
+
+   new_command _custom_command python3 path/to/script.py "%{sioyek_path}"
+
+- ``_custom_command`` → name shown in Sioyek
+- ``script.py`` → your Python script
+- ``"%{sioyek_path}"`` → current file path
+
+.. Side note::
+   if the script is not being recognised by sioyek in that case you can try using the full path of the python3 library in your machine, for example: /Library/Frameworks/Python.framework/Versions/3.12/bin/python3
+
+4. (Optional) Organize Scripts
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can store scripts in::
+
+   ~/.config/sioyek/sioyek_extensions
+
 .. warning::
    The way we parse :code:`new_command` is very simple: we split the text following the command name by spaces and treat the first part as the name of executable and the rest as parameters. So first of all, you have to escape the spaces in command using backslash. Secondly something like this would not work:
 
