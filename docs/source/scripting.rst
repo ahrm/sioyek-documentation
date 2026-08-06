@@ -45,7 +45,7 @@ Sioyek provides the following possible inputs to custom commands:
 * :code:`%{line_text}`: expands to text of the current selected line when in sioyek's visual line mode
 * :code:`%{page_number}`: expands to current page number (zero-indexed)
 * :code:`%{command_text}`: If this argument is present in the commands, sioyek prompts the user to enter a text and expands :code:`command_text` to that text.
-* :code:`%{mouse_pos_window}`: exapnds to mouse x and y position in window coordinates in pixels
+* :code:`%{mouse_pos_window}`: expands to mouse x and y position in window coordinates in pixels
 * :code:`%{mouse_pos_document}`: expands to the page number and x and y coordinates of the mouse in the page's coordinate system
 * :code:`%{paper_name}`: expands to the paper name under mouse cursor
 * :code:`%{sioyek_path}`: expands to the path of sioyek's executable
